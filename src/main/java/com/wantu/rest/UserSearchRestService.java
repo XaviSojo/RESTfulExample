@@ -31,7 +31,6 @@ public class UserSearchRestService {
         } else {
             return Response.status(200).entity("None of the options").build();
         }
-
     }
 
     private List<DBObject> performSearch(String key, String value) throws UnknownHostException {
@@ -43,10 +42,7 @@ public class UserSearchRestService {
         searchQuery.put(key, value);
         DBCursor cursor = db.find(searchQuery);
         List<DBObject> names = new ArrayList<>();
-
-        while (cursor.hasNext()) {
-            names.add(cursor.next());
-        }
+        while (cursor.hasNext()) { names.add(cursor.next()); }
         cursor.close();
         return names;
     }
