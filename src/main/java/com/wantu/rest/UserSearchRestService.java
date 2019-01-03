@@ -1,9 +1,15 @@
 package com.wantu.rest;
 
-import com.mongodb.*;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.wantu.app.ConnectionManager;
 
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.UnknownHostException;
@@ -42,7 +48,9 @@ public class UserSearchRestService {
         searchQuery.put(key, value);
         DBCursor cursor = db.find(searchQuery);
         List<DBObject> names = new ArrayList<>();
-        while (cursor.hasNext()) { names.add(cursor.next()); }
+        while (cursor.hasNext()) {
+            names.add(cursor.next());
+        }
         cursor.close();
         return names;
     }

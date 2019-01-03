@@ -1,6 +1,7 @@
 package com.wantu.app;
 
-import com.mongodb.*;
+import com.mongodb.DBCollection;
+import com.mongodb.MongoClient;
 
 import java.net.UnknownHostException;
 
