@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="RESTfulExample.war">
+    <root id="archive" name="Wantu.war">
       <element id="artifact" artifact-name="Wantu:war exploded" />
     </root>
   </artifact>
