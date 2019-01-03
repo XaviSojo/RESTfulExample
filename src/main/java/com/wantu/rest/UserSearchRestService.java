@@ -23,11 +23,13 @@ import javax.ws.rs.core.Response;
 
 public class UserSearchRestService {
   @GET
-  @Path("/{param}")
+  @Path("/{param: .*}")
+
 
   public Response displaySearch(@PathParam("param") String msg) throws UnknownHostException {
 
     UserSearchRestService results = new UserSearchRestService();
+
 
     if ("f".equals(msg)) {
       return Response.status(200).entity(results.performSearch("gender", msg).toArray()).build();
