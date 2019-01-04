@@ -25,7 +25,6 @@ public class UserSearchRestService {
   @GET
   @Path("/{param: .*}")
 
-
   public Response displaySearch(@PathParam("param") String msg) throws UnknownHostException {
 
     UserSearchRestService results = new UserSearchRestService();
